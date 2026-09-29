@@ -41,6 +41,8 @@ async function loadCases() {
 }
 
 function renderCases() {
+  const countBadge = $("#sidebarCaseCount");
+  if (countBadge) countBadge.textContent = state.cases.length ? String(state.cases.length) : "0";
   const list = $("#caseList");
   if (!state.cases.length) {
     list.innerHTML = '<p class="empty">No investigations yet.</p>';
